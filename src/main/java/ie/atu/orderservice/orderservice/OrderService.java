@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(name = "Order-service", url = "http://localhost:8081")
 public interface OrderService {
     @PostMapping("/createOrder")
-    String orderDetails();
+    String orderDetails(@RequestBody int orderId, int productId, int quantity, int customerId);
 
 }
